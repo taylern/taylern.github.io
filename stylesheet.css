@@ -1,0 +1,30 @@
+ul {
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+}
+
+li{
+	display: inline; 
+}
+
+body {
+  background-color: #E0F8F7;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+  
+h2 {
+  color: gray; 
+  text-align: left;
+  }
+
+p {
+  font-family: georgia;
+  font-size: 20px;
+  border: 1px solid blue
+  word-wrap: break-word; 
+}
