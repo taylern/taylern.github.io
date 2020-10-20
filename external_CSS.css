@@ -1,0 +1,137 @@
+/*navbar consistent across all pages, adapted from w3 schools
+https://www.w3schools.com/Css/css_navbar_horizontal.asp*/
+
+ul.navbar{
+	list-style-type: none; 
+	margin: 0px; 
+	padding: 0px; 
+}
+
+li{
+	display: inline; 
+	padding: 8px; 
+	background-color: #254117; 
+}
+
+/*header consistent across all pages on the site
+adapted from w3 schools 
+https://www.w3schools.com/css/css_website_layout*/
+
+div.header {
+	background: #438D80;
+	text-align: left;
+	padding: 10px;
+}
+
+h1 {
+	font-family: georgia;
+	color: white;
+	text-align: center;
+}
+
+/*float side image to the left of the page*/
+img.side_image {
+	float: left;
+	margin-right: 10px;
+}
+
+/*main introductory text in various font sizes*/
+p.intro {
+	font-family: georgia;
+	font-size: 30px;
+	padding: 10px;
+}
+
+p.main {
+	font-family: georgia;
+	font-size: 20px;
+	padding-right: 10px;
+}
+
+/*duplicate site navigation links in a (hopefully) kind of fun, "Choose Your Own Adventure" format
+main link format differentiated from contact list*/
+p.directory1 {
+	font-family: georgia; 
+	font-size: 15px; 
+	text-align: right;
+	padding-top: 100px;
+}
+
+p.directory2 {
+	font-family: georgia; 
+	font-size: 15px; 
+	text-align: right;
+	padding-top: 5px;
+}
+
+a.link {
+	font-family: georgia; 
+	font-size: 15px; 
+	font-style: italic; 
+	color: black;
+}	
+
+/*different heading formats, primarily for the formatting in the resume section*/	
+  
+h2 {
+	font-family: verdana;
+	color: black; 
+	padding-bottom: 5px;
+	text-align: left;
+	background-color: #54C571
+  
+}
+  
+h3 {
+	font-family: verdana;
+	color: #2B1B17; 
+	text-align: left;
+	padding: 2px;
+	background-color: #8BB381
+}
+
+h4 {
+	font-family: verdana;
+	color: gray; 
+	text-align: left;
+	font-style: italic;
+	margin: 5px;
+}
+h5 {
+	font-family: verdana;
+	color: white; 
+	text-align: left;
+	font-style: italic;
+}
+
+/*gallery image padding and alignment*/
+.gallery {
+	padding: 10px;
+	text-align: center; 
+}
+
+/*all paragraphs not specially formatted*/
+p {
+	font-family: georgia;
+	font-size: 15px;
+	padding: 15px;
+}
+
+/*main page footer with external links (in distinct format from main page links)
+adapted from w3 schools 
+https://www.w3schools.com/css/css_website_layout*/
+
+a {
+	color: #FFF8DC;
+	font-family: georgia;
+}
+
+div.footer {
+	background-color: #438D80;
+	text-align: center;
+	padding: 10px;
+	position: absolute;
+	bottom: 10px;
+}
+
+
