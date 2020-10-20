@@ -1,28 +1,55 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-<title>The Personal Website of Tayler Nichol</title>
+<title>Tayler Nichol</title>
+<link rel="stylesheet" href="external_CSS.css">
 </head>
-<!--link to external CSS-->
-
-<style>
-
-</style>
-<body> 
-
-<!--modify navbar from w3 schools (example to source near the end of lecture 6)-->
-
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="gallery.html">Gallery</a
-  <li><a href="gallery.html">Contact</a></li>
+<body>
+ 
+<ul class="navbar">
+  <li><a href="index.html">Main</a></li>
+  <li><a href="about.html">Experience</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
 </ul>
+<!--assignment requirement: navbar -->
+<!--navbar adapted from W3 schools
+https://www.w3schools.com/Css/css_navbar_horizontal.asp*/-->
 
-<h1>Personal website of Tayler Nichol<h1> 
-<p>I am a graduate of the Environmental Geoscience program at the University of Western Ontario, currently studying GIS at Fleming College.</p> <!--add padding here--> 
-<p><i>If interested in my qualifications, go to page 2...</i></p>
-<p><i>If you would like to see an art and map gallery, go to page 3...</i></p>
+<div class="header">
+  <h1>Personal Website of Tayler Nichol</h1>
+</div>
+<!--header adapted from W3 schools
+https://www.w3schools.com/css/css_website_layout*/-->
+
+<p class="intro"><img src="C:/GEOM101/Personal_Website_Project/images/Field_July_9.jpg" alt="Image of a field" height="675" class = "side_image">
+		Welcome! 
+		<p class="main">
+		I am a student at Fleming College and an aspiring geospatial scientist. 
+		This website is intended to host my personal projects, a short description of my qualifications, 
+		and eventually a blog with science writing on GIS, climate change, and the natural environment.
+		</p>
+		<p class="main">
+		I am a recent graduate of the Environmental Geoscience and Bioarchaeological Anthropology programs at the University of Western Ontario, 
+		and I have previously worked as an environmental planner and a geological consultant. 
+		My interest in mapping stems from my interest in combining art and science to analyze and visualize information. 
+		</p>
+		<p class="directory1">If you would like to know more about my past experiences, <a href="C:/GEOM101/Personal_Website_Project/about.html" class="link">go to page 2...</a>
+		</p>
+		<p class="directory2">If you would like to see some maps, <a href="C:/GEOM101/Personal_Website_Project/gallery.html" class="link">go to page 3...</a>
+		</p>
+</p>
+
+<!--image wrap adapted from pg. 411 of "HTML and CSS" by Jon Duckett, John Wiley and Sons, Inc, 2011-->
+
+<div class="footer">
+  <h5>Contact: 
+  <a href="https://www.linkedin.com/in/tayler-nichol/">LinkedIn,</a>
+  <a href="https://twitter.com/lorisoidea">Twitter</a>
+ </h5>
+</div>
+<!--assignment requirement: two external links--> 
+<!--footer adapted from W3 schools
+https://www.w3schools.com/css/css_website_layout*/-->
 
 </body>
 </html>
