@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Map Demo</title>
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE&callback=initMap&libraries=&v=weekly"
+			defer
+		></script>	
+		<style>
+		h1 {color: rgb(36, 6, 36);
+			font-family: verdana}
+		#map {
+			height: 400px;
+			width: 100%;
+		}
+		</style>
+		<script> 
+			//Initialize and add the map 
+			function initMap() {
+				//The location of Western 
+				const uwo = { lat: 43.01075, lng: -81.27313 };
+				//The map, centered at Western 
+				const map = new google.maps.Map(document.getElementById("map"), {
+					zoom: 5, 
+					center: uwo,
+				});
+				//The marker, positioned at the Natural Sciences Building
+				const marker = new google.maps.Marker({
+					position: uwo,
+					map: map, 
+				});
+			}
+		</script>
+	</head> 
+	<body>
+		<h1>University Location Demo</h1>
+		<!-- div map element-->
+		<div id="map"></div>
+	</body>
+</html>
+
+		

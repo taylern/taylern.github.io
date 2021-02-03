@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atlantean Pseudoarchaeology</title>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkAVS7Oz6_zeIKNPtXxhJnt003sS4Ve1k&callback=initMap&libraries=&v=weekly"
+            defer
+        ></script>
+        <style>
+            #map {
+                height: 600px; 
+                width: 100%;
+                position: center; 
+            }
+            #dsc {
+                font-family: georgia;
+                color: black;
+                font-size: 16px;
+            }
+            #egg {
+                font-family: georgia; 
+                color: #F9F8DC;
+            }
+            h1 {
+                font-family: georgia;
+                color: #1E3422;
+                text-align: left;
+            }
+            p {
+                padding: 4px;
+            }
+            body {
+                background-color: #F9F8DC;
+            }
+        </style> 
+        <script>
+		function initMap() {
+            //create map document
+		    var map = new google.maps.Map(document.getElementById("map"), {
+		        zoom: 3.5,
+		        center: { lat: 47.749573, lng: 12.107117 },
+            });
+            
+		    //marker dictionary
+		    var markers =  [
+                ['Nuraghe of Is Paras', 39.749573, 9.107118],
+                ['Newgrange',53.701721, -6.469530],
+                ['Göbekli Tepe', 40.763570, 36.328020],
+                ['Doñana National Park', 37.0428145, -6.434629]
+            ];
+
+            //create content 
+            var content_text = [
+                ['<div class = "info">' + '<h3>Nuraghe Is Paras, Sardinia, Italy</h3>'+'<p>One of many archaeological sites that can be found on the island of Sardinia, the tower at Is Paras may have been the tallest tower in the world at the time of its construction in approximately 1,400 BCE.</p>'+      '<p>Source: Emily Holt, <a href="https://errant.live/2019/02/22/was-sardinia-atlantis-hint-no/">' +
+          "Was Sardinia Atlantis? Hint: No</a> </p>"],
+                ['<div class = "info">' + '<h3>Newgrange, Ireland</h3>'+'<p>This Stone Age tomb dates back to 3,200 BCE, one of a group of monuments constructed by the prehistoric people of Ireland and called Brú na Bóinne. The tomb has been claimed to be an Atlantean temple by Keystone University Ireland, but no known archaeological evidence has been found. </p>'+'<p>Source: Irish Central <a href="https://www.irishcentral.com/news/lost-city-atlantis-ireland">' +
+          "The Lost City of Atlantis is Ireland.</a></p> "],
+                ['<div class = "info">' + '<h3>Göbekli Tepe, Turkey</h3>'+'<p>The oldest site on this map (12,000 BCE), the construction of Göbekli Tepe in what is now Turkey suggests early innovations in architecture, potentially for the purposes of religious worship. Despite the lack of hard evidence, this degree of complexity has been suggested to indicate the presence of other sophisticated cultures active concurrently, such as the lost civilization of Atlantis </p>'+'<p>Source: The Atlantis Project <a href="https://www.theatlantisproject.org/gobekli-tepe/">' +
+          "Göbekli Tepe</a></p> "],
+                ['<div class = "info">' + '<h3>Doñana National Park, Spain </h3>'+'<p>Circular experimental ponds constructed in this park in the early 2000s for the purposes of studying zooplankton communities were mistaken by documentary filmmakers for evidence of an ancient culture.</p>'+'<p>Source: Discover Magazine <a href="https://www.discovermagazine.com/planet-earth/where-is-the-lost-city-of-atlantis-and-does-it-even-exist">' +
+          "Where Is the Lost City of Atlantis - and Does It Even Exist?</a></p> "]
+            ];
+
+            //loop markers on to the map
+            for(i = 0; i < markers.length; i++) {
+                var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                    marker = new google.maps.Marker({
+                        position: position,
+                        map: map,
+                        title: markers[i][0],
+                        icon: 'pin2.png'
+                });
+                // create info windows with each marker. multiple windows example adapted from: https://www.semicolonworld.com/googlemap/tutorial/google-maps-with-multiple-markers-javascript-api
+                var infoWindow = new google.maps.InfoWindow(), marker, i;
+                
+                // create 'click to open' event, add content 
+                marker.addListener('click', (function(marker, i) {
+                    return function() {
+                        infoWindow.setContent(content_text[i][0]);
+                        infoWindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h1>Atlantis Found! Again.</h1>
+        <div id="dsc">
+            <p>Atlantis, a destroyed 'lost continent' in the Atlantic Ocean, is now generally acknowledged to have been a myth created by the Greek philosopher Plato*, used as a teaching tool. This has not stopped several people over the centuries from claiming to have discovered the true location of this hypothetical culture. Often, these theories are based in real places and real archaeological discoveries and, in at least one case, a misinterpreted wetland ecology experiment.</p>
+            <p>Inspired by a conversation on the pseudoarchaeology podcast <i>Archaeological Fantasies</i> (Episode 107: Atlantis in Sardinia with Dr. Emily Holt) this map is intended to use myth to explore real information about some of the earliest known human civilizations. Click on the map markers below for more information about three of these archaeological sites (and one experiment on zooplankton!).
+        </div>
+        <div id="map"></div>
+        <!-- to do list: set markers, set satellite display, set mouseover with text, add sources-->
+        <div id="egg">*also the answer to the question "who died and left Aristotle in charge of ethics?"</h3>
+    </body>
+</html>
+    
