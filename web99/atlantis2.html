@@ -21,7 +21,11 @@
                 font-family: georgia; 
                 color: #F9F8DC;
             }
+            img {
+                height: 150px;
+            }
             h1 {
+                padding: 3px;
                 font-family: georgia;
                 color: #1E3422;
                 text-align: left;
@@ -51,13 +55,13 @@
 
             //create content 
             var content_text = [
-                ['<div class = "info">' + '<h3>Nuraghe Is Paras, Sardinia, Italy</h3>'+'<p>One of many archaeological sites that can be found on the island of Sardinia, the tower at Is Paras may have been the tallest tower in the world at the time of its construction in approximately 1,400 BCE.</p>'+      '<p>Source: Emily Holt, <a href="https://errant.live/2019/02/22/was-sardinia-atlantis-hint-no/">' +
+                ['<div class = "info">' + '<img src="https://errantlive.files.wordpress.com/2019/02/nuraghe-is-paras-eholt.jpg">'  +'<h3>Nuraghe Is Paras, Sardinia, Italy</h3>'+'<p>One of many archaeological sites that can be found on the island of Sardinia, the tower at Is Paras may have been the tallest tower in the world at the time of its construction in approximately 1,400 BCE. Sardinian archaeologists have expressed their concerns that real information is being distorted to support pseudoarchaeology. </p>'+      '<p>Source: Emily Holt, <a href="https://errant.live/2019/02/22/was-sardinia-atlantis-hint-no/">' +
           "Was Sardinia Atlantis? Hint: No</a> </p>"],
-                ['<div class = "info">' + '<h3>Newgrange, Ireland</h3>'+'<p>This Stone Age tomb dates back to 3,200 BCE, one of a group of monuments constructed by the prehistoric people of Ireland and called Brú na Bóinne. The tomb has been claimed to be an Atlantean temple by Keystone University Ireland, but no known archaeological evidence has been found. </p>'+'<p>Source: Irish Central <a href="https://www.irishcentral.com/news/lost-city-atlantis-ireland">' +
+                ['<div class = "info">' + '<img src="http://irisharchaeology.ie/wp-content/gallery/neolithic/newgrange.jpg">'+'<h3>Newgrange, Ireland</h3>'+'<p>This Stone Age tomb dates back to 3,200 BCE, one of a group of monuments called Brú na Bóinne and constructed by the prehistoric people of Ireland. The tomb has been claimed to be an Atlantean temple by Keystone University Ireland, but no known archaeological evidence has been found. </p>'+ '<p>Source: Irish Central <a href="https://www.irishcentral.com/news/lost-city-atlantis-ireland">' +
           "The Lost City of Atlantis is Ireland.</a></p> "],
-                ['<div class = "info">' + '<h3>Göbekli Tepe, Turkey</h3>'+'<p>The oldest site on this map (12,000 BCE), the construction of Göbekli Tepe in what is now Turkey suggests early innovations in architecture, potentially for the purposes of religious worship. Despite the lack of hard evidence, this degree of complexity has been suggested to indicate the presence of other sophisticated cultures active concurrently, such as the lost civilization of Atlantis </p>'+'<p>Source: The Atlantis Project <a href="https://www.theatlantisproject.org/gobekli-tepe/">' +
+                ['<div class = "info">' + '<img src="https://cdn.cnn.com/cnnnext/dam/assets/200515154909-gobekli-tepe-exlarge-169.jpg">'+'<h3>Göbekli Tepe, Turkey</h3>'+'<p>The oldest site on this map (12,000 BCE), the construction of Göbekli Tepe in what is now Turkey suggests early innovations in architecture, potentially for the purposes of religious worship. Despite a lack of hard evidence, this degree of complexity has been suggested to indicate the presence of other sophisticated cultures active concurrently, such as the lost civilization of Atlantis </p>'+'<p>Source: The Atlantis Project <a href="https://www.theatlantisproject.org/gobekli-tepe/">' +
           "Göbekli Tepe</a></p> "],
-                ['<div class = "info">' + '<h3>Doñana National Park, Spain </h3>'+'<p>Circular experimental ponds constructed in this park in the early 2000s for the purposes of studying zooplankton communities were mistaken by documentary filmmakers for evidence of an ancient culture.</p>'+'<p>Source: Discover Magazine <a href="https://www.discovermagazine.com/planet-earth/where-is-the-lost-city-of-atlantis-and-does-it-even-exist">' +
+                ['<div class = "info">'+ '<img src="https://cdn.iflscience.com/images/9c8895f6-06a6-550f-8305-fb26fbf8062e/extra_large-1542378354-cover-image.jpg">' + '<h3>Doñana National Park, Spain </h3>'+'<p>Circular experimental ponds were constructed in this park in the early 2000s for the purposes of studying the dispersal and colonization rates of zooplankton communities. These modern artifical ponds were mistaken by documentary filmmakers for evidence of an ancient culture.</p>'+'<p>Source: Discover Magazine <a href="https://www.discovermagazine.com/planet-earth/where-is-the-lost-city-of-atlantis-and-does-it-even-exist">' +
           "Where Is the Lost City of Atlantis - and Does It Even Exist?</a></p> "]
             ];
 
@@ -87,7 +91,7 @@
     <body>
         <h1>Atlantis Found! Again.</h1>
         <div id="dsc">
-            <p>Atlantis, a destroyed 'lost continent' in the Atlantic Ocean, is now generally acknowledged to have been a myth created by the Greek philosopher Plato*, used as a teaching tool. This has not stopped several people over the centuries from claiming to have discovered the true location of this hypothetical culture. Often, these theories are based in real places and real archaeological discoveries and, in at least one case, a misinterpreted wetland ecology experiment.</p>
+            <p>Atlantis, a destroyed 'lost continent' in the Atlantic Ocean, is now generally acknowledged to have been an allegory invented by the Greek philosopher Plato*, used as a teaching tool. This has not stopped several people over the centuries from claiming to have discovered the true location of this hypothetical culture. Often, these theories are based in real places and real archaeological discoveries and, in at least one case, a misinterpreted wetland ecology experiment.</p>
             <p>Inspired by a conversation on the pseudoarchaeology podcast <i>Archaeological Fantasies</i> (Episode 107: Atlantis in Sardinia with Dr. Emily Holt) this map is intended to use myth to explore real information about some of the earliest known human civilizations. Click on the map markers below for more information about three of these archaeological sites (and one experiment on zooplankton!).
         </div>
         <div id="map"></div>
