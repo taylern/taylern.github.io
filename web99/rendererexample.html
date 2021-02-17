@@ -1,0 +1,86 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>London Ontario Restaurants</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 5px;
+      margin: 5px;
+      height: 90%;
+      width: 95%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.18/"></script>
+
+  <script>
+  // created using the ESRI's "Add a feature layer" tutorial found here: https://developers.arcgis.com/javascript/latest/add-a-feature-layer/
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+
+    "esri/layers/FeatureLayer"
+
+  ], function(esriConfig,Map, MapView, FeatureLayer) {
+
+  esriConfig.apiKey = "AAPK0d83ee6f2d8448f1bbf1915bcf104d04oTrZoGdYiO1xGvKDwVgFlcyxTqPipWubV5EI45QRkyK3s6NBnX9DGboAcgFrzzJS";
+
+  const map = new Map({
+    basemap: "arcgis-topographic"
+  });
+
+  const view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [-81.25032910674591,42.99998969703404],
+    zoom: 13
+  });
+  
+  const restaurantRenderer = {
+      "type": "simple",
+      "symbol": {
+        "type": "picture-marker",
+        "url": "images.onlinelabels.com/images/clip-art/kablam/kablam_glossy_heart_thumb.png",
+        "width": "18px",
+        "height": "18px"
+      }
+    }  
+	const restaurantLabels = {
+		symbol: {
+			type: "text",
+			color: "#FFFFFF",
+			haloColor: "#5E8D74",
+			  haloSize: "1px",
+			  font: {
+				size: "12px",
+				family: "Verdana",
+				style: "italic",
+				weight: "normal"
+			}
+		},
+
+			labelPlacement: "above-center",
+			labelExpressionInfo: {
+			  expression: "$feature.Name"
+			}
+		};
+
+//Restaurants feature layer (points)
+  const restaurantLayer = new FeatureLayer({
+    url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/London_Restaurant_Point_Layer/FeatureServer/0",
+	renderer: restaurantRenderer,
+	labelingInfo: [trailheadsLabels]
+ });
+
+  map.add(restaurantLayer);
+  });
+</script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+  <h1>London Ontario Restaurant Recommendations</h1>
+  <h2>To visit <i>next</i> Valentine's Day</h2>
+</body>
+</html>
