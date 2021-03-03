@@ -1,0 +1,122 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Canadian Provinces, Territories, and Cities</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.18/"></script>
+
+  <script>
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+
+    "esri/layers/FeatureLayer"
+
+  ], function(esriConfig,Map, MapView, FeatureLayer) {
+
+  esriConfig.apiKey = "AAPK0d83ee6f2d8448f1bbf1915bcf104d04oTrZoGdYiO1xGvKDwVgFlcyxTqPipWubV5EI45QRkyK3s6NBnX9DGboAcgFrzzJS";
+
+  const map = new Map({
+    basemap: "arcgis-topographic"
+  });
+
+  const view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [-101.763928,69.758498],
+    zoom: 3
+  });
+// add feature layers (points and polygons) from: https://developers.arcgis.com/javascript/latest/add-a-feature-layer/
+//Cities feature layer (points)
+  const citiesLayer = new FeatureLayer({
+    url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0"
+  });
+
+  map.add(citiesLayer);
+  
+  // Add parks with a class breaks renderer and unique symbols
+  function createFillSymbol(value, color) {
+    return {
+      "value": value,
+      "symbol": {
+        "color": color,
+        "type": "simple-fill",
+        "style": "solid",
+        "outline": {
+          "style": "none"
+        }
+      },
+      "label": value
+    };
+  }
+
+  const provincesRenderer = {
+    type: "unique-value",
+    field: "PRENAME",
+    uniqueValueInfos: [
+      createFillSymbol("Manitoba", "#9E559C"),
+      createFillSymbol("Saskatchewan", "#A7C636"),
+      createFillSymbol("Alberta", "#149ECE"),
+      createFillSymbol("Ontario", "#ED5151"),
+      createFillSymbol("Newfoundland and Labrador", "#9E559C"),
+      createFillSymbol("Prince Edward Island", "#A7C636"),
+      createFillSymbol("Nova Scotia", "#149ECE"),
+      createFillSymbol("New Brunswick", "#ED5151"),
+      createFillSymbol("Quebec", "#9E559C"),
+      createFillSymbol("British Columbia", "#A7C636"),
+      createFillSymbol("Yukon", "#149ECE"),
+      createFillSymbol("Northwest Territories", "#ED5151"),
+      createFillSymbol("Nunavut", "#ED5151")
+    ],
+    label: "PRENAME"
+  };
+
+// Provinces (polygons)
+  const provincesLayer = new FeatureLayer({
+    url: "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab1/TanichoCanada/MapServer/0",
+    // add Renderer to style the feature layer. source: https://developers.arcgis.com/javascript/latest/style-a-feature-layer/
+    renderer: provincesRenderer,
+    opacity: 0.3,
+        // labelingInfo autocasts to an array of LabelClass objects
+        // which label the provinces at a small scale according the PRENAME field in the feature layer
+        // source: https://developers.arcgis.com/javascript/latest/sample-code/layers-mapimagelayer-dynamic-labels/
+        labelingInfo: [
+      {
+        labelExpression: "[PRENAME]",
+        labelPlacement: "always-horizontal",
+        symbol: {
+          type: "text", // autocasts as new TextSymbol()
+          color: [255, 255, 255, 0.85],
+          haloColor: "gray",
+          haloSize: 1,
+          font: {
+            size: 14,
+            weight: "bold"
+          }
+        },
+        minScale: 9250000,
+        maxScale: 10000000
+      }
+    ]
+  });
+
+  map.add(provincesLayer, 0);
+
+  });
+</script>
+
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>
